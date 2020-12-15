@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>File Upload</title>
+  </head>
+  <body>
+    <h1>File Upload</h1>
+    <form method="POST" action="/convert" enctype="multipart/form-data">
+      <p><!-- <input type="file" name="file" accept = ".xlsx,.xltx,.xlsm,.xlsb,.xls"></p> -->
+			<input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" name = "file1">  
+      </p>
+
+      <p><input type="submit" value="Submit"></p>
+    
+    </form>
+    {{ path }}
+    <br>
+    <br>
+    {% if path %}
+    <form method = "POST" action="/download">
+            <button name ="download" value ="{{ path }}">Download images...</button>
+    </form>
+    {% endif %}
+  </body>
+</html>
